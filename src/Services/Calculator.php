@@ -42,7 +42,7 @@ class Calculator
 
     private function subtraction($minuend, $subtrahend):int
     {
-        return $minuend + $subtrahend;
+        return $minuend - $subtrahend;
     }
 
     private function multiplication($firstProduct, $secondProduct):int

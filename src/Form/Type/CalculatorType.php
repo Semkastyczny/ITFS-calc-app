@@ -16,9 +16,13 @@ class CalculatorType extends AbstractType
             ->add('secondNumber', TextType::class)
             ->add('save', SubmitType::class)
         ;
+
     }
 
-    public function getBlockPrefix()
+    /*
+    * @return string 
+    */
+    public function getBlockPrefix():string
     {
         return '';
     }

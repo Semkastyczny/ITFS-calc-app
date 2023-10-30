@@ -9,8 +9,14 @@ class Calculator
 
     public CONST OPERATIONS = ['sum', 'difference', 'product', 'quotient'];
 
+    /**
+     * @Assert\NotBlank
+     */
     protected $firstNumber;
 
+    /**
+     * @Assert\NotBlank
+     */
     protected $secondNumber;
     
     /**

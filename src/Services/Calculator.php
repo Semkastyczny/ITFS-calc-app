@@ -35,23 +35,23 @@ class Calculator
 
     }
 
-    private function sum($firstComponent, $secondComponent):int
+    private function sum($firstComponent, $secondComponent):string
     {
-        return $firstComponent + $secondComponent;
+        return bcadd($firstComponent, $secondComponent, 0);
     }
 
-    private function subtraction($minuend, $subtrahend):int
+    private function subtraction($minuend, $subtrahend):string
     {
-        return $minuend - $subtrahend;
+        return bcsub($minuend, $subtrahend, 0);
     }
 
-    private function multiplication($firstProduct, $secondProduct):int
+    private function multiplication($firstProduct, $secondProduct):string
     {
-        return $firstProduct * $secondProduct;
+        return bcmul($firstProduct, $secondProduct, 0);
     }
 
-    private function division($dividend, $divider):int
+    private function division($dividend, $divider):string
     {
-        return $dividend/$divider;
+        return bcdiv($dividend, $divider, 0);
     }
 }

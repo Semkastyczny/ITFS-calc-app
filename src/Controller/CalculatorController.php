@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Calculator;
 use App\Form\Type\CalculatorType;
 use App\Services\Calculator as ServicesCalculator;
+use stdClass;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,7 +27,8 @@ class CalculatorController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $calculation = $calculatorService->calculate($form->getData());
         } else {
-            $calculation = $form->getErrors();
+            $calculation = new stdClass();
+            $calculation->error = true;
         }
 
         return $this->formatResponse(json_encode($calculation));
@@ -46,7 +48,8 @@ class CalculatorController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $calculation = $calculatorService->calculate($form->getData());
         } else {
-            $calculation = $form->getErrors();
+            $calculation = new stdClass();
+            $calculation->error = true;
         }
 
         return $this->formatResponse(json_encode($calculation));
@@ -66,7 +69,8 @@ class CalculatorController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $calculation = $calculatorService->calculate($form->getData());
         } else {
-            $calculation = $form->getErrors();
+            $calculation = new stdClass();
+            $calculation->error = true;
         }
 
         return $this->formatResponse(json_encode($calculation));
@@ -86,7 +90,8 @@ class CalculatorController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $calculation = $calculatorService->calculate($form->getData());
         } else {
-            $calculation = $form->getErrors();
+            $calculation = new stdClass();
+            $calculation->error = true;
         }
 
         return $this->formatResponse(json_encode($calculation));
